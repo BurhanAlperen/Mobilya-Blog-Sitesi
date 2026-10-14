@@ -1,0 +1,178 @@
+/**
+ * Konfor Tasarım Mobilya - Responsive Stylesheet
+ */
+
+/* Mobile Navigation Drawer */
+.mobile-nav-drawer {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 82%;
+  max-width: 380px;
+  height: 100%;
+  background: var(--bg-surface);
+  border-left: 1px solid var(--border-medium);
+  z-index: 1500;
+  display: flex;
+  flex-direction: column;
+  padding: 32px 24px;
+  box-shadow: -10px 0 40px rgba(0, 0, 0, 0.8);
+  transition: right var(--transition-normal);
+}
+
+.mobile-nav-drawer.open {
+  right: 0;
+}
+
+.mobile-nav-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 36px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.mobile-nav-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-bottom: auto;
+}
+
+.mobile-nav-links a {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  display: block;
+}
+
+.mobile-nav-links a.active {
+  color: var(--brand-burgundy-light);
+}
+
+.mobile-nav-footer {
+  padding-top: 24px;
+  border-top: 1px solid var(--border-subtle);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.drawer-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(8px);
+  z-index: 1400;
+  opacity: 0;
+  visibility: hidden;
+  transition: all var(--transition-fast);
+}
+
+.drawer-backdrop.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Breakpoint 1024px */
+@media (max-width: 1024px) {
+  .nav-menu {
+    display: none;
+  }
+
+  .mobile-menu-toggle {
+    display: flex;
+  }
+
+  .hero-media-backdrop {
+    width: 100%;
+    opacity: 0.22;
+  }
+
+  .footer-top {
+    grid-template-columns: 1fr 1fr;
+    gap: 36px;
+  }
+}
+
+/* Breakpoint 768px */
+@media (max-width: 768px) {
+  :root {
+    --header-height: 72px;
+  }
+
+  .hero-title {
+    font-size: 2.2rem;
+  }
+
+  .hero-desc {
+    font-size: 1.05rem;
+  }
+
+  .hero-features-bar {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .phone-quick-pill span {
+    display: none;
+  }
+
+  .project-type-selector {
+    grid-template-columns: 1fr;
+  }
+
+  .about-card {
+    padding: 28px 20px;
+  }
+
+  .form-card {
+    padding: 24px 18px;
+  }
+
+  .footer-top {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .floating-whatsapp span {
+    display: none;
+  }
+
+  .floating-whatsapp {
+    padding: 14px;
+    bottom: 20px;
+    right: 20px;
+    border-radius: 50%;
+  }
+
+  .gallery-filter-bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .gallery-search {
+    width: 100%;
+  }
+}
+
+/* Breakpoint 480px */
+@media (max-width: 480px) {
+  .hero-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .hero-buttons .btn {
+    width: 100%;
+  }
+
+  .modal-body-padding {
+    padding: 20px 16px;
+  }
+}

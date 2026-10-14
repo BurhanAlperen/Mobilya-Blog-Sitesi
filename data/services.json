@@ -1,0 +1,59 @@
+[
+  {
+    "id": "srv-kurumsal",
+    "title": "Kurumsal Proje Mobilyaları",
+    "subtitle": "İş Dünyası & Ticari Mekanlar",
+    "badge": "B2B Projeler",
+    "desc": "Ofislerden genel merkez binalarına, otellerden klinik ve ticari mekânlara kadar mimari şartnamelere uygun, kurumsal kimliği yansıtan mobilya çözümleri.",
+    "items": [
+      "Yönetim Katı & Makam Çalışma Masaları",
+      "Gömme Veri/Priz Kanallı Toplantı Masaları",
+      "Özel Form Resepsiyon & Karşılama Bankoları",
+      "Otel & Dinlenme Alanı Sabit Mobilyaları",
+      "Ticari Mağaza & Showroom Ahşap Teşhir Alanları"
+    ],
+    "benefits": [
+      "Mimari projeye ve şartnameye birebir uygunluk",
+      "Belirlenen iş takvimine ve şantiye teslimine sadakat",
+      "Yoğun kullanıma dayanıklı E1 sertifikalı malzemeler"
+    ]
+  },
+  {
+    "id": "srv-bireysel",
+    "title": "Bireysel Özel Tasarım Mobilya",
+    "subtitle": "Kişiye Özel Yaşam Alanları",
+    "badge": "Villa & Konut",
+    "desc": "Standart seri üretim mobilyaların sınırlarını aşarak; evinizin ölçülerine, tarzınıza ve ihtiyaçlarınıza göre sıfırdan tasarlanan butik ahşap imalatı.",
+    "items": [
+      "Özel Aydınlatmalı Giyinme Odası Sistemleri",
+      "Salon TV Duvarı & Entegre Kitaplık Üniteleri",
+      "Mimari Lake ve Doğal Ahşap Mutfak Dolapları",
+      "Özel Tasarım Banyo Mobilyaları ve Aynalıklar",
+      "Ahşap Yatak Başlığı & Komodin Setleri"
+    ],
+    "benefits": [
+      "Evinizin milimetrik rölövesine göre özel üretim",
+      "Zengin renk, kaplama, lake ve kulp seçenekleri",
+      "Ergonomik ve kullanım ömrü yüksek donanımlar"
+    ]
+  },
+  {
+    "id": "srv-mimari",
+    "title": "Mimari Ahşap & Akustik Paneller",
+    "subtitle": "Duvar, Tavan ve Gizli Detaylar",
+    "badge": "Mimari Detay",
+    "desc": "Mekâna sıcaklık, derinlik ve akustik konfor kazandıran çıtalı ahşap duvar kaplamaları, gizli kapı sistemleri ve tavan dönüş detayları.",
+    "items": [
+      "Dikey & Yatay Doğal Ahşap Çıta Duvar Panelleri",
+      "Akustik Keçe Tabanlı Ses Yutucu Ahşap Sistemler",
+      "Duvarla Hemzemin Gizli Menteşeli Kapılar",
+      "Masif Ağaç Masa, Sehpa ve Özel Tezgâhlar",
+      "Işıklı Niş ve Ahşap Tavan Lambrileri"
+    ],
+    "benefits": [
+      "Yüksek estetik değer ve mimari zarafet",
+      "Ses yalıtımını ve akustik netliği artıran yapı",
+      "Usta marangozluk birleşim hassasiyeti"
+    ]
+  }
+]

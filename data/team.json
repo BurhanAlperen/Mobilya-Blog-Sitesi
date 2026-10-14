@@ -1,0 +1,38 @@
+{
+  "leader": {
+    "name": "Selim Divarcı",
+    "title": "Firma Yetkilisi & Proje Koordinatörü",
+    "phone": "+90 537 430 3560",
+    "email": "konformobilya2026@gmail.com",
+    "statement": "Konfor Tasarım Mobilya olarak bizim için her ahşap parçası, içine yerleştiği mekânın ruhunu taşır. Kurumsal projelerde teslim disiplinini, bireysel projelerde ise butik zanaat hassasiyetini esas alıyoruz. Çekmeköy atölyemizde her aşamayı şahsen denetliyor; söz verdiğimiz kalite ve zamanda teslim etmeyi markamızın en temel ilkesi sayıyoruz.",
+    "roleFocus": [
+      "Müşteri İlişkileri ve Keşif",
+      "Proje & Bütçe Yönetimi",
+      "Atölye İmalat ve Kalite Kontrol",
+      "Şantiye Teslim Koordinasyonu"
+    ]
+  },
+  "workshopUnits": [
+    {
+      "id": "craft",
+      "title": "Ahşap & İmalat Ustalarımız",
+      "subtitle": "Çekmeköy Üretim Atölyesi",
+      "desc": "Yılların ahşap tecrübesine sahip usta eller; masif ağaç, doğal kaplama, lake boya ve panel işlemlerini milimetrik titizlikle şekillendirir.",
+      "skills": ["Masif Ahşap İşleme", "Doğal Kaplama Presleme", "İpek Mat Lake Boya", "Kenar Bantlama & Birleşimler"]
+    },
+    {
+      "id": "technical",
+      "title": "Teknik Rölöve & Projelendirme",
+      "subtitle": "Mühendislik & Çizim",
+      "desc": "Şantiyede alınan lazer rölöveler, mimari projelere aktarılır ve üretim öncesi tüm birleşim ve montaj detayları kusursuzca modellenir.",
+      "skills": ["Milimetrik Lazer Rölöve", "İmalat Detay Çizimleri", "Malzeme Metrajı", "Mekanizma Uyumluluk Testi"]
+    },
+    {
+      "id": "assembly",
+      "title": "Montaj & Uygulama Ekibi",
+      "subtitle": "Şantiye & Yerinde Montaj",
+      "desc": "Üretimi tamamlanan mobilyaların mekânınıza zarar verilmeden, temiz, sessiz ve kusursuz ayarlanarak kurulmasını sağlayan uzman kadromuz.",
+      "skills": ["Hassas Montaj & Terazi", "Temiz Şantiye Disiplini", "Aksesuar & Ray Ayarları", "Teslimat Sonrası Kontrol"]
+    }
+  ]
+}

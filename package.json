@@ -1,0 +1,21 @@
+{
+  "name": "konfor-tasarim-mobilya",
+  "version": "1.0.0",
+  "description": "Konfor Tasarım Mobilya - Modern, Premium Kurumsal Web Sitesi & Dijital Vitrin",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "konfor-tasarim",
+    "mobilya",
+    "kurumsal-mobilya",
+    "ozel-uretim",
+    "cekmekoy",
+    "istanbul",
+    "selim-divarci"
+  ],
+  "author": "Konfor Tasarım Mobilya",
+  "license": "ISC"
+}
