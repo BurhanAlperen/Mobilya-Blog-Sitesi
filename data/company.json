@@ -26,9 +26,14 @@
         "city": "İstanbul",
         "country": "Türkiye",
         "full": "Aydınlar Mah. Sahra Sk. Bilir Apt. No:1-3A, Çekmeköy / İstanbul",
-        "googleMapsQuery": "Aydınlar Mahallesi Sahra Sokak Bilir Apartmanı Çekmeköy İstanbul",
-        "googleMapsEmbedUrl": "https://maps.google.com/maps?q=Ayd%C4%B1nlar+Mah.+Sahra+Sk.+No:1-3A+%C3%87ekmek%C3%B6y+%C4%B0stanbul&t=&z=16&ie=UTF8&iwloc=&output=embed",
-        "googleMapsDirectionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Ayd%C4%B1nlar+Mahallesi+Sahra+Sokak+No:1-3A+%C3%87ekmek%C3%B6y+%C4%B0stanbul"
+        "placeName": "Konfor mobilya tasarım uygulama",
+        "coordinates": {
+          "lat": 41.0169858,
+          "lng": 29.2184408
+        },
+        "googleMapsPlaceUrl": "https://www.google.com/maps/place/Konfor+mobilya+tasar%C4%B1m+uygulama/@41.0169814,29.2182566,48m/data=!3m1!1e3!4m6!3m5!1s0x2bfdfa5b3b52206b:0x53384eb063ee4d08!8m2!3d41.0169858!4d29.2184408!16s%2Fg%2F11nhb5pkf6",
+        "googleMapsEmbedUrl": "https://maps.google.com/maps?q=41.0169858,29.2184408+(Konfor+mobilya+tasar%C4%B1m+uygulama)&t=&z=17&ie=UTF8&iwloc=&output=embed",
+        "googleMapsDirectionsUrl": "https://www.google.com/maps/dir/?api=1&destination=41.0169858,29.2184408"
       },
       "workingHours": {
         "weekdays": "08:30 - 19:00",
