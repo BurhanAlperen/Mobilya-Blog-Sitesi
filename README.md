@@ -37,8 +37,8 @@ python3 -m http.server 3030
 
 ---
 
-## 📂 Sayfa & İçerik Yapısı
-1. **[index.html](file:///Users/alp/Desktop/Konfor%20Tasar%C4%B1m%20Mobilya/index.html):** Ana Dijital Vitrin
+## 📂 Sayfa & Temiz URL Yapısı
+1. **`/` (Ana Sayfa):** [`index.html`](file:///Users/alp/Desktop/Konfor%20Tasar%C4%B1m%20Mobilya/index.html) - Ana Dijital Vitrin
    - Hero manşet alanı, güven rozetleri, doğrudan arama ve WhatsApp aksiyonları
    - Üretim felsefesi ve Selim Divarcı liderlik güvencesi
    - Öne çıkan projeler vitrini (İnteraktif lightbox detay modallı)
@@ -46,16 +46,16 @@ python3 -m http.server 3030
    - Atölye zanaatkârları ve şantiye montaj ekibi birimleri
    - İnteraktif proje danışma ve teklif formu
    - Çekmeköy harita ve konum paneli
-2. **[projeler.html](file:///Users/alp/Desktop/Konfor%20Tasar%C4%B1m%20Mobilya/projeler.html):** Proje Galerisi
+2. **`/projeler` (Proje Galerisi):** [`projeler.html`](file:///Users/alp/Desktop/Konfor%20Tasar%C4%B1m%20Mobilya/projeler.html)
    - Dinamik kategori filtreleme (Kurumsal, Bireysel & Villa, Özel Mimari Ahşap)
    - Anlık arama (Malzeme, lokasyon veya proje adına göre canlı süzme)
    - Detaylı malzeme ve kapsam lightbox penceresi
    - Tek tıkla WhatsApp üzerinden proje adı seçili teklif isteme
-3. **[hakkimizda.html](file:///Users/alp/Desktop/Konfor%20Tasar%C4%B1m%20Mobilya/hakkimizda.html):** Hakkımızda & Atölye Kültürü
+3. **`/hakkimizda` (Hakkımızda & Atölye):** [`hakkimizda.html`](file:///Users/alp/Desktop/Konfor%20Tasar%C4%B1m%20Mobilya/hakkimizda.html)
    - 4 Aşamalı Anahtar Teslim Süreç (Rölöve -> Projelendirme -> İmalat -> Montaj)
    - Malzeme standartları (Doğal kaplama, E1 normu, Blum/Hettich raylar, İpek mat lake)
    - Selim Divarcı'nın vizyon ve taahhüt metni
-4. **[iletisim.html](file:///Users/alp/Desktop/Konfor%20Tasar%C4%B1m%20Mobilya/iletisim.html):** İletişim & Lokasyon
+4. **`/iletisim` (İletişim & Lokasyon):** [`iletisim.html`](file:///Users/alp/Desktop/Konfor%20Tasar%C4%B1m%20Mobilya/iletisim.html)
    - Google Haritalar entegrasyonu ve tek tıkla navigasyon
    - Doğrudan arama, WhatsApp mesajı ve form iletme alanı
    - Çalışma ve atölye randevu saatleri

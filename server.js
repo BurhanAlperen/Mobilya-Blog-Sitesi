@@ -20,7 +20,7 @@ const MIME_TYPES = {
   '.vcf': 'text/vcard; charset=utf-8'
 };
 
-const server = http.createServer((req, res) => {
+const handleRequest = (req, res) => {
   // Normalize URL
   const reqUrl = new URL(req.url, `http://${req.headers.host}`);
   let pathname = decodeURIComponent(reqUrl.pathname);
@@ -96,7 +96,17 @@ const server = http.createServer((req, res) => {
     }
   }
 
-  // Static files handling
+  // Clean URL: 301 Redirect .html requests to clean path (SEO friendly)
+  if (pathname.endsWith('.html')) {
+    const cleanPath = pathname === '/index.html' ? '/' : pathname.slice(0, -5);
+    res.writeHead(301, {
+      'Location': cleanPath + (reqUrl.search || '')
+    });
+    res.end();
+    return;
+  }
+
+  // Root request
   if (pathname === '/') {
     pathname = '/index.html';
   }
@@ -104,11 +114,14 @@ const server = http.createServer((req, res) => {
   const filePath = path.join(__dirname, pathname);
 
   fs.stat(filePath, (err, stats) => {
+    // If exact file does not exist, check if an .html file matches (e.g. /projeler -> projeler.html)
     if (err || !stats.isFile()) {
-      // If file not found, try appending .html
       const htmlPath = filePath + '.html';
       if (fs.existsSync(htmlPath)) {
-        res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' });
+        res.writeHead(200, {
+          'Content-Type': 'text/html; charset=utf-8',
+          'Cache-Control': 'no-cache'
+        });
         fs.createReadStream(htmlPath).pipe(res);
         return;
       }
@@ -127,7 +140,9 @@ const server = http.createServer((req, res) => {
     });
     fs.createReadStream(filePath).pipe(res);
   });
-});
+};
+
+const server = http.createServer(handleRequest);
 
 function startServer(portToTry) {
   server.listen(portToTry, () => {
@@ -149,4 +164,8 @@ server.on('error', (err) => {
   }
 });
 
-startServer(currentPort);
+if (require.main === module) {
+  startServer(currentPort);
+}
+
+module.exports = { server, handleRequest, MIME_TYPES };
