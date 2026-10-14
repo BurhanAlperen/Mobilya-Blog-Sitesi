@@ -1,1 +1,10 @@
-[]
+[
+  {
+    "id": "INQ-1792020915587",
+    "timestamp": "2026-10-14T23:35:15.587Z",
+    "name": "Test Proje",
+    "phone": "05374303560",
+    "projectType": "Kurumsal Proje",
+    "details": "Toplantı masası ve akustik panel"
+  }
+]
