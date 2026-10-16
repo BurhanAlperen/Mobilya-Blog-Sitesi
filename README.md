@@ -1,80 +1,117 @@
-# Konfor Tasarım Mobilya - Kurumsal Web Sitesi & Dijital Vitrin
+# Mobilya & Mimari Proje Vitrini (Corporate Furniture Showcase)
 
-**Konfor Tasarım Mobilya** için hazırlanan modern, premium ve özgün kurumsal web sitesi.
+Modern, lüks ve özgün kurumsal mobilya projeleri ile özel mimari ahşap uygulamalarını sergilemek üzere geliştirilmiş **Dijital Vitrin ve Portfolyo Web Sitesi**.
 
----
-
-## 🏛️ Marka & İletişim Bilgileri
-- **Firma:** Konfor Tasarım Mobilya
-- **Yetkili:** Selim Divarcı
-- **Telefon:** [+90 537 430 3560](tel:+905374303560)
-- **E-posta:** [konformobilya2026@gmail.com](mailto:konformobilya2026@gmail.com)
-- **Adres:** Aydınlar Mah. Sahra Sk. Bilir Apt. No:1-3A, Çekmeköy / İstanbul
-- **Konsept:** Kurumsal Projeler (B2B ofis, otel, ticari mekanlar) & Bireysel Özel İmalat (Villa, giyinme odası, mutfak, ahşap panel kaplamalar)
+Bu proje, e-ticaret karmaşasından uzak; B2B kurumsal projelerin (ofis, otel, ticari alan) ve butik mimari konut/villa imalatlarının zanaat ve mühendislik detaylarıyla sergilendiği, ziyaretçilerin doğrudan yetkiliyle iletişim kurabildiği modern bir mimari vitrindir.
 
 ---
 
-## 🚀 Hızlı Başlangıç
+## 🛠️ Nasıl Yapıldı? (Proje Mimarisi & Teknolojiler)
 
-Web sitesini çalıştırmak için 3 farklı kolay yöntem mevcuttur:
+Proje, harici ağır kütüphanelere (React/Next.js/Webpack vb.) ihtiyaç duymadan, ışık hızında yüklenen ve sürdürülebilir bir kod yapısıyla geliştirilmiştir:
 
-### Yöntem 1: Node.js ile Çalıştırma (Önerilen)
-Sunucuyu başlatmak için proje dizininde şu komutu çalıştırın:
+### 1. Ön Yüz & Tasarım Sistemi (UI/UX)
+- **Tasarım Belirteçleri (CSS Custom Properties):** Bordo vurgular (`#801424`), metalik krom (`#C5C9CE`), derin obsidyen arka plan (`#0C0D0F`) ve doğal sıcak ahşap tonları (`#B3865D`) ile oluşturulmuş tutarlı renk sistemi.
+- **Tipografi:** Başlıklarda heykelsi zarafet sunan `Cinzel`, okunabilirlik için `Plus Jakarta Sans`.
+- **Modüler CSS Mimarisi:** `variables.css`, `base.css`, `layout.css`, `components.css` ve `responsive.css` olarak ayrılmış, çakışmayan katmanlar.
+- **Mikro Etkileşimler:** Akıcı cam efekti (glassmorphism), kaydırma duyarlı navbar, interaktif modal lightbox ve responsive mobil çekmece menü.
+
+### 2. Veri Soyutlama Katmanı (DataStore Pattern)
+- **Tek Gerçeklik Kaynağı (Single Source of Truth):** Proje, hizmet ve şirket bilgileri HTML içine gömülmek yerine `data/` klasöründeki şematik JSON dosyalarında (`projects.json`, `company.json`, `services.json`, `team.json`) tutulur.
+- **Çift Modlu Veri Erişimi (`assets/js/data/store.js`):** Sitenin hem sunucusuz çift tıklamayla (`file://`) hem de web sunucusu üzerinden (`http://`) çalışmasını sağlar; HTTP ortamındaysa dinamik `/api/projects` uç noktalarından veri çeker.
+
+### 3. Temiz URL (.html Uzantısız) Yönlendirme
+- Sayfa içi tüm linkler `.html` uzantısı olmadan (`/`, `/projeler`, `/hakkimizda`, `/iletisim`) çalışır.
+- Yayın ortamı için hem bulut sistemleri (`vercel.json`) hem geleneksel cPanel/Apache sunucuları (`.htaccess` mod_rewrite) ve Nginx için tam yapılandırılmıştır.
+- Eski `.html` adreslerine gelen istekler SEO puanını korumak için `301 Kalıcı Yönlendirme` ile temiz URL'lere aktarılır.
+
+### 4. Dahili Node.js Sunucusu & REST API Mock
+- Sıfır harici paket bağımlılığıyla çalışan saf Node.js sunucusu (`server.js`).
+- `/api/projects` ve `/api/company` GET servisleri.
+- Ziyaretçilerin web formundan gönderdiği proje danışma taleplerini yakalayıp `data/inquiries.json` dosyasına kaydeden ve tek tıkla mesajlaşma formatına dönüştüren `/api/inquiry` POST servisi.
+
+---
+
+## 📂 Dosya & Dizin Yapısı
+
+```
+├── index.html              # Ana Dijital Vitrin (Hero, Değerler, Vitrin, Hizmetler, Ekip, İletişim)
+├── hakkimizda.html         # Kurumsal Hikaye, Atölye Kültürü, 4 Aşamalı Süreç, Malzeme Standartları
+├── projeler.html           # Filtrelenebilir Proje Galerisi, Canlı Arama, Lightbox Modal
+├── iletisim.html           # İletişim, Harita Entegrasyonu & Hızlı Danışma Formu
+├── server.js               # Yerel Node.js HTTP sunucusu ve REST API motoru
+├── test-routes.js          # Rota ve temiz URL otomatik test paketi
+├── package.json            # Proje scriptleri (start, test, dev)
+├── vercel.json             # Vercel temiz URL yapılandırması
+├── .htaccess               # Apache / cPanel mod_rewrite kuralları
+├── data/                   # JSON Veri Modelleri (Şablon / Dummy)
+│   ├── company.json        # Firma ve iletişim şablon verisi
+│   ├── projects.json       # Proje portfolyosu, malzemeler ve kategoriler
+│   ├── services.json       # Hizmet kalemleri ve avantajlar
+│   ├── team.json           # Atölye birimleri ve ekip yapısı
+│   └── inquiries.json      # Gelen form talepleri veritabanı
+├── assets/
+│   ├── css/                # Tasarım belirteçleri ve stil sayfaları
+│   ├── js/                 # Galeri, form ve uygulama kontrolcüleri
+│   └── images/             # Logo, manşet ve mimari referans fotoğrafları
+└── docs/                   # Mimari ve sunucu kurulum kılavuzları
+    ├── ARCHITECTURE.md     # Gelecek Admin Paneli & SQL/Prisma DB entegrasyon rehberi
+    └── DEPLOYMENT.md       # Vercel, cPanel, Nginx ve PM2 yayınlama rehberi
+```
+
+---
+
+## 🚀 Kurulum & Çalıştırma
+
+Projeyi çalıştırmak için 3 farklı yöntem mevcuttur:
+
+### 1. Dahili Sunucu ile Çalıştırma (Önerilen)
 ```bash
+# Sunucuyu başlatın
 npm start
 # veya
 node server.js
 ```
-Tarayıcınızda açın: **[http://localhost:3030](http://localhost:3030)** (Port meşgulse bir sonraki boş portu otomatik seçer).
+Tarayıcınızda açın: **`http://localhost:3030`**
 
-### Yöntem 2: Python ile Çalıştırma
+### 2. Otomatik Rota Testlerini Çalıştırma
 ```bash
-python3 -m http.server 3030
+npm test
+```
+Tüm temiz URL yönlendirmelerini, 301 yönlendirmelerini ve API yanıtlarını otomatik test eder.
+
+### 3. Sunucusuz Açma
+Herhangi bir kurulum yapmadan doğrudan `index.html` dosyasına çift tıklayarak tarayıcınızda açabilirsiniz.
+
+---
+
+## ⚙️ Yapılandırma & Şablon Bilgileri (Dummy Data)
+
+Projeyi kendi firmanıza veya müşterinize göre özelleştirmek için `data/company.json` dosyasındaki şablon alanları düzenleyebilirsiniz:
+
+```json
+{
+  "company": {
+    "name": "Örnek Mobilya Tasarım & Uygulama",
+    "authorizedPerson": {
+      "name": "Firma Yetkilisi / Proje Yöneticisi",
+      "title": "Proje Koordinatörü",
+      "phone": "+90 5XX XXX XX XX",
+      "email": "info@ornek-mobilya.com"
+    },
+    "contact": {
+      "phone": "+90 5XX XXX XX XX",
+      "email": "info@ornek-mobilya.com",
+      "address": {
+        "full": "Örnek Mah. Sanayi Cad. No:1, İstanbul / Türkiye"
+      }
+    }
+  }
+}
 ```
 
-### Yöntem 3: Doğrudan Dosya Açma (Sıfır Sunucu)
-`index.html` dosyasına çift tıklayarak herhangi bir tarayıcıda doğrudan açabilirsiniz. Kod yapısı hem `file://` hem de `http://` protokollerinde sorunsuz çalışacak şekilde tasarlanmıştır.
-
 ---
 
-## 📂 Sayfa & Temiz URL Yapısı
-1. **`/` (Ana Sayfa):** [`index.html`](file:///Users/alp/Desktop/Konfor%20Tasar%C4%B1m%20Mobilya/index.html) - Ana Dijital Vitrin
-   - Hero manşet alanı, güven rozetleri, doğrudan arama ve WhatsApp aksiyonları
-   - Üretim felsefesi ve Selim Divarcı liderlik güvencesi
-   - Öne çıkan projeler vitrini (İnteraktif lightbox detay modallı)
-   - Hizmet matrisi (Kurumsal, Bireysel ve Mimari Ahşap)
-   - Atölye zanaatkârları ve şantiye montaj ekibi birimleri
-   - İnteraktif proje danışma ve teklif formu
-   - Çekmeköy harita ve konum paneli
-2. **`/projeler` (Proje Galerisi):** [`projeler.html`](file:///Users/alp/Desktop/Konfor%20Tasar%C4%B1m%20Mobilya/projeler.html)
-   - Dinamik kategori filtreleme (Kurumsal, Bireysel & Villa, Özel Mimari Ahşap)
-   - Anlık arama (Malzeme, lokasyon veya proje adına göre canlı süzme)
-   - Detaylı malzeme ve kapsam lightbox penceresi
-   - Tek tıkla WhatsApp üzerinden proje adı seçili teklif isteme
-3. **`/hakkimizda` (Hakkımızda & Atölye):** [`hakkimizda.html`](file:///Users/alp/Desktop/Konfor%20Tasar%C4%B1m%20Mobilya/hakkimizda.html)
-   - 4 Aşamalı Anahtar Teslim Süreç (Rölöve -> Projelendirme -> İmalat -> Montaj)
-   - Malzeme standartları (Doğal kaplama, E1 normu, Blum/Hettich raylar, İpek mat lake)
-   - Selim Divarcı'nın vizyon ve taahhüt metni
-4. **`/iletisim` (İletişim & Lokasyon):** [`iletisim.html`](file:///Users/alp/Desktop/Konfor%20Tasar%C4%B1m%20Mobilya/iletisim.html)
-   - Google Haritalar entegrasyonu ve tek tıkla navigasyon
-   - Doğrudan arama, WhatsApp mesajı ve form iletme alanı
-   - Çalışma ve atölye randevu saatleri
-
----
-
-## 🛠️ Gelecek Admin Paneli & Veritabanı Mimarisi
-Detaylı mimari dokümantasyonu için inceleyiniz: **[docs/ARCHITECTURE.md](file:///Users/alp/Desktop/Konfor%20Tasar%C4%B1m%20Mobilya/docs/ARCHITECTURE.md)**
-
-- Tüm veriler `data/projects.json`, `data/company.json`, `data/services.json` altında yapılandırılmıştır.
-- Web sitesi `assets/js/data/store.js` veri soyutlama katmanı üzerinden çalışır.
-- İleride bir admin paneli ve veritabanı (PostgreSQL, Supabase veya SQLite) bağlandığında, ön yüz bileşenlerinde hiçbir kod değişikliği yapılmasına gerek kalmadan doğrudan REST API'ye bağlanabilir.
-- Gelen web sitesi formları şimdiden `/api/inquiry` endpoint'i üzerinden yakalanıp `data/inquiries.json` dosyasına güvenle kaydedilmektedir.
-
----
-
-## 🎨 Tasarım Sistemi (Design Tokens)
-- **Bordo (Logo Kırmızısı):** `#801424` / `#9D1B2E`
-- **Krom / Platin Metalik:** `#C5C9CE` / `#E8EBEE`
-- **Obsidyen Siyahı:** `#0C0D0F` / `#121417`
-- **Doğal Ahşap & Taş Tonları:** `#B3865D` / `#F5F2EB`
-- **Tipografi:** Cinzel (Başlıklar) & Plus Jakarta Sans (Gövde metinleri)
+## 🔒 Güvenlik & Gizlilik
+- Bu açık kaynaklı repoda gerçek şahıslara ait kişisel veriler, özel telefon numaraları veya lisanssız ticari bilgiler yer almamaktadır.
+- Form alanları ve iletişim bağlantıları yerel şablon / dummy parametrelerle çalışmaktadır.
