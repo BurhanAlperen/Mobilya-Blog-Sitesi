@@ -6,6 +6,40 @@ Bu proje, e-ticaret karmaşasından uzak; B2B kurumsal projelerin (ofis, otel, t
 
 ---
 
+## 🖼️ Proje & Arayüz Vitrini (Showcase)
+
+Web sitesinin mimari karanlık lüks konseptini, tipografisini ve duyarlı (responsive) tasarımını yansıtan arayüz görüntüleri:
+
+### 🌟 Ana Sayfa & Hero Alanı
+> Derin obsidyen arka plan, heykelsi Cinzel tipografi ve birinci elden üretim felsefesini öne çıkaran manşet alanı.
+
+![Ana Sayfa Vitrini](docs/screenshots/01-ana-sayfa-hero.png)
+
+---
+
+### 🏛️ Proje Galerisi & Filtreleme Arayüzü
+> Kurumsal, bireysel konut ve mimari ahşap kategorilerine göre anlık filtrelenebilen, malzeme etiketli portfolyo kartları.
+
+![Proje Galerisi](docs/screenshots/02-projeler-galerisi.png)
+
+---
+
+### 🪵 Kurumsal Kimlik & Atölye Zanaati
+> Çekmeköy atölye kültürü, 4 adımlı anahtar teslim iş akışı ve mimari malzeme standartlarının anlatıldığı kurumsal sayfa.
+
+![Hakkımızda & Atölye](docs/screenshots/03-uretim-ve-atolye.png)
+
+---
+
+### 📱 Mobil & Duyarlı Tasarım
+> Masaüstünden akıllı telefonlara kadar kusursuz uyum sağlayan responsive tipografi ve kart düzeni.
+
+<p align="center">
+  <img src="docs/screenshots/04-mobil-tasarim.png" alt="Mobil Tasarım" width="360" style="border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);" />
+</p>
+
+---
+
 ## 🛠️ Nasıl Yapıldı? (Proje Mimarisi & Teknolojiler)
 
 Proje, harici ağır kütüphanelere (React/Next.js/Webpack vb.) ihtiyaç duymadan, ışık hızında yüklenen ve sürdürülebilir bir kod yapısıyla geliştirilmiştir:
@@ -56,7 +90,8 @@ Proje, harici ağır kütüphanelere (React/Next.js/Webpack vb.) ihtiyaç duymad
 │   └── images/             # Logo, manşet ve mimari referans fotoğrafları
 └── docs/                   # Mimari ve sunucu kurulum kılavuzları
     ├── ARCHITECTURE.md     # Gelecek Admin Paneli & SQL/Prisma DB entegrasyon rehberi
-    └── DEPLOYMENT.md       # Vercel, cPanel, Nginx ve PM2 yayınlama rehberi
+    ├── DEPLOYMENT.md       # Vercel, cPanel, Nginx ve PM2 yayınlama rehberi
+    └── screenshots/        # Vitrin ve arayüz önizleme ekran görüntüleri
 ```
 
 ---
@@ -114,4 +149,5 @@ Projeyi kendi firmanıza veya müşterinize göre özelleştirmek için `data/co
 
 ## 🔒 Güvenlik & Gizlilik
 - Bu açık kaynaklı repoda gerçek şahıslara ait kişisel veriler, özel telefon numaraları veya lisanssız ticari bilgiler yer almamaktadır.
+- README vitrinindeki ve web arayüzündeki tüm önizlemeler gizlilik normlarına uygun olarak hassas iletişim bilgileri (telefon, e-posta vb.) gizlenerek hazırlanmıştır.
 - Form alanları ve iletişim bağlantıları yerel şablon / dummy parametrelerle çalışmaktadır.
