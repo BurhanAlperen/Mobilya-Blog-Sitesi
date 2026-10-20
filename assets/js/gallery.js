@@ -28,17 +28,22 @@
 
     container.innerHTML = list.map(project => `
       <article class="project-card" data-id="${project.id}">
-        <div class="project-thumb">
+        <div class="project-thumb" onclick="KonforGallery.openModal('${project.id}')" title="Projeyi İncele">
           <img src="${project.image}" alt="${project.title}" loading="lazy" />
           <span class="project-badge-type">${project.categoryLabel}</span>
           ${project.isReferenceConcept ? '<span class="project-badge-ref">Referans Konsept</span>' : ''}
+          <div class="project-thumb-overlay">
+            <span class="thumb-zoom-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+            </span>
+          </div>
         </div>
         <div class="project-body">
           <div class="project-location">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z"/><circle cx="12" cy="10" r="3"/></svg>
             <span>${project.location}</span>
           </div>
-          <h3 class="project-title">${project.title}</h3>
+          <h3 class="project-title" onclick="KonforGallery.openModal('${project.id}')" title="Projeyi İncele">${project.title}</h3>
           <p class="project-scope">${project.scope}</p>
           <div class="project-materials-list">
             ${project.materials.slice(0, 3).map(m => `<span class="material-tag">${m}</span>`).join('')}
@@ -102,7 +107,7 @@
 
     if (modalMaterials) {
       modalMaterials.innerHTML = project.materials.map(m => `
-        <span class="material-tag" style="padding: 6px 12px; font-size: 0.85rem; background: var(--bg-surface); border-color: var(--border-medium);">${m}</span>
+        <span class="material-tag">${m}</span>
       `).join('');
     }
 

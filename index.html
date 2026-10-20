@@ -638,38 +638,34 @@
         <img id="modalImage" src="" alt="Proje Detay Görseli">
       </div>
       <div class="modal-body-padding">
-        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; flex-wrap: wrap; gap: 8px;">
-          <span class="section-badge" id="modalCategory" style="margin-bottom:0;">Kurumsal Proje</span>
-          <div style="font-size: 0.85rem; color: var(--brand-chrome);" id="modalYear">2025 - 2026</div>
-        </div>
-        <h2 class="font-serif" id="modalTitle" style="margin-bottom: 12px; font-size: 1.8rem;">Proje Başlığı</h2>
-        <div style="display: flex; align-items: center; gap: 8px; font-size: 0.9rem; color: var(--brand-chrome); margin-bottom: 20px;">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z"/><circle cx="12" cy="10" r="3"/></svg>
-          <span id="modalLocation">Lokasyon</span>
-        </div>
-        
-        <div style="margin-bottom: 24px;">
-          <h4 style="font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--brand-chrome-light); margin-bottom: 6px;">İmalat Kapsamı</h4>
-          <p id="modalScope" style="font-size: 1rem; color: var(--text-primary);"></p>
-        </div>
-
-        <div style="margin-bottom: 24px;">
-          <h4 style="font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--brand-chrome-light); margin-bottom: 6px;">Açıklama & Detaylar</h4>
-          <p id="modalSummary" style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6;"></p>
-        </div>
-
-        <div style="margin-bottom: 30px;">
-          <h4 style="font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--brand-chrome-light); margin-bottom: 10px;">Kullanılan Malzeme & Donanımlar</h4>
-          <div id="modalMaterials" style="display: flex; flex-wrap: wrap; gap: 8px;"></div>
-        </div>
-
-        <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; padding-top: 20px; border-top: 1px solid var(--border-medium);">
-          <div style="font-size: 0.85rem; color: var(--text-muted);">
-            Projenizi Selim Divarcı ile doğrudan değerlendirin.
+        <div>
+          <div class="modal-header-meta">
+            <span class="modal-badge" id="modalCategory">Kurumsal Proje</span>
+            <span class="modal-year" id="modalYear">2025 - 2026</span>
           </div>
-          <a id="modalWhatsAppBtn" href="#" target="_blank" class="btn btn-whatsapp">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2z"/></svg>
-            <span>Bu Proje Benzeri Teklif İste</span>
+          <h2 class="modal-title font-serif" id="modalTitle">Proje Başlığı</h2>
+          <div class="modal-location">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span id="modalLocation">Lokasyon</span>
+          </div>
+          <div class="modal-spec-block">
+            <div class="modal-spec-title">İmalat Kapsamı</div>
+            <p class="modal-spec-text" id="modalScope"></p>
+          </div>
+          <div class="modal-spec-block">
+            <div class="modal-spec-title">Açıklama & Detaylar</div>
+            <p class="modal-spec-text" id="modalSummary"></p>
+          </div>
+          <div class="modal-spec-block">
+            <div class="modal-spec-title">Kullanılan Malzeme & Donanımlar</div>
+            <div class="modal-materials-wrap" id="modalMaterials"></div>
+          </div>
+        </div>
+        <div class="modal-footer-action">
+          <div class="modal-note">Selim Divarcı ile doğrudan değerlendirin.</div>
+          <a id="modalWhatsAppBtn" href="#" target="_blank" class="modal-cta-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2z"/></svg>
+            <span>Teklif İste</span>
           </a>
         </div>
       </div>
