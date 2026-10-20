@@ -24,7 +24,7 @@ body {
   position: relative;
 }
 
-/* Background Atmospheric Subtle Pattern */
+/* Luminous Architectural Natural Lighting Effect */
 body::before {
   content: '';
   position: fixed;
@@ -33,15 +33,16 @@ body::before {
   width: 100%;
   height: 100%;
   background-image: 
-    radial-gradient(circle at 15% 15%, rgba(128, 20, 36, 0.08) 0%, transparent 45%),
-    radial-gradient(circle at 85% 80%, rgba(197, 201, 206, 0.04) 0%, transparent 50%);
+    radial-gradient(circle at 10% 10%, rgba(128, 20, 36, 0.035) 0%, transparent 45%),
+    radial-gradient(circle at 90% 85%, rgba(168, 116, 69, 0.035) 0%, transparent 50%),
+    radial-gradient(circle at 50% 50%, rgba(194, 155, 56, 0.02) 0%, transparent 60%);
   pointer-events: none;
   z-index: -1;
 }
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 9px;
 }
 
 ::-webkit-scrollbar-track {
@@ -49,7 +50,7 @@ body::before {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--bg-card-hover);
+  background: #DDD8CE;
   border: 2px solid var(--bg-primary);
   border-radius: var(--radius-full);
 }
@@ -104,17 +105,19 @@ p {
 }
 
 /* Utility Helpers */
-.text-burgundy { color: var(--brand-burgundy-light); }
+.text-burgundy { color: var(--brand-burgundy); }
 .text-chrome { color: var(--brand-chrome); }
 .text-wood { color: var(--accent-wood-warm); }
 .text-muted { color: var(--text-muted); }
+
 .text-gradient-chrome {
-  background: linear-gradient(135deg, #FFFFFF 0%, var(--brand-chrome-light) 40%, var(--brand-chrome) 100%);
+  background: linear-gradient(135deg, #181A1E 0%, #3D4350 45%, #6B7382 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
 .text-gradient-burgundy {
-  background: linear-gradient(135deg, #d32d44 0%, var(--brand-burgundy) 60%, #4a0710 100%);
+  background: linear-gradient(135deg, #A81B30 0%, #801424 55%, #580C17 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -132,10 +135,10 @@ p {
   align-items: center;
   gap: 8px;
   padding: 6px 14px;
-  background: rgba(128, 20, 36, 0.12);
-  border: 1px solid var(--border-burgundy);
+  background: rgba(128, 20, 36, 0.06);
+  border: 1px solid rgba(128, 20, 36, 0.2);
   border-radius: var(--radius-full);
-  color: var(--brand-burgundy-light);
+  color: var(--brand-burgundy);
   font-size: 0.82rem;
   font-weight: 600;
   text-transform: uppercase;
@@ -146,9 +149,9 @@ p {
 .section-badge .dot {
   width: 6px;
   height: 6px;
-  background-color: var(--brand-burgundy-light);
+  background-color: var(--brand-burgundy);
   border-radius: 50%;
-  box-shadow: 0 0 8px var(--brand-burgundy-light);
+  box-shadow: 0 0 6px rgba(128, 20, 36, 0.4);
 }
 
 .section-title {
